@@ -1,0 +1,34 @@
+#!/usr/bin/make -f
+
+#
+# Force a release build & works around a g++ compiler bug by happy coincidence
+#
+export DEB_CXXFLAGS_MAINT_APPEND = -DNDEBUG
+export DEB_LDFLAGS_MAINT_APPEND = -lpthread
+
+export DEB_BUILD_MAINT_OPTIONS=hardening=+all
+DPKG_EXPORT_BUILDFLAGS=1
+include /usr/share/dpkg/buildflags.mk
+
+export DH_OPTIONS
+
+%:
+	dh $@ --with autoreconf --parallel
+
+override_dh_auto_build:
+	xsltproc --nonet \
+		--param make.year.ranges 1 \
+		--param make.single.year.ranges 1 \
+		--param man.charmap.use.subset 0 \
+		-o debian/ \
+	http://docbook.sourceforge.net/release/xsl/current/manpages/docbook.xsl \
+		debian/capnp.1.xml
+	dh_auto_build
+
+override_dh_auto_clean:
+	rm -f debian/capnp.1
+	dh_auto_clean
+
+override_dh_auto_test:
+	VERBOSE=1 dh_auto_test
+
