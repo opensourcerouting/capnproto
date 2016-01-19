@@ -1,12 +1,6 @@
 usr/lib/libcapnp-0.5.99.so
 usr/lib/libcapnpc-0.5.99.so
-usr/lib/libcapnpc.so
 usr/lib/libcapnp-rpc-0.5.99.so
-usr/lib/libcapnp-rpc.so
-usr/lib/libcapnp.so
 usr/lib/libkj-0.5.99.so
 usr/lib/libkj-async-0.5.99.so
-usr/lib/libkj-async.so
-usr/lib/libkj.so
 usr/lib/libkj-test-0.5.99.so
-usr/lib/libkj-test.so
