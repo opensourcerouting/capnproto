@@ -70,5 +70,30 @@
 /c++/m4/lt~obsolete.m4
 /c++/samples/addressbook
 
+# Debian Package Build Artifacts
+/c++/debian/autoreconf.after
+/c++/debian/autoreconf.before
+/c++/debian/capnp.1
+/c++/debian/capnproto.substvars
+/c++/debian/capnproto/
+/c++/debian/files
+/c++/debian/libcapnp-*.debhelper
+/c++/debian/libcapnp-*.substvars
+/c++/debian/libcapnp-*/
+/c++/debian/libcapnp-dev.substvars
+/c++/debian/libcapnp-dev/
+/c++/debian/tmp/
+capnproto_*.debian.tar.gz
+capnproto_*.dsc
+capnproto_*_*.build
+capnproto_*_*.changes
+capnproto_*.deb
+capnproto_*.orig.tar.gz
+libcapnp-*.deb
+
+# cmake artifacts
+/c++/cmake/CapnProtoConfig.cmake
+/c++/cmake/CapnProtoConfigVersion.cmake
+
 # editor artefacts
 *~
